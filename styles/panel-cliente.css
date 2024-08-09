@@ -1,0 +1,136 @@
+:root{
+    --beige: #EAE7DD;
+    --cafe: #99775C;
+    --cafe-claro: #ac8a6f;
+    --gris: #5B5B5B;
+    --rojo: #AC3030;
+    --rojo-claro: #c74545;
+    --blanco: #ffffff;
+    --verde: #188a21;
+    --verde-claro: #1aa125;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+    background-color: var(--beige);
+}
+ul{
+    margin-right: 2rem;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 3rem;
+    justify-content: end;
+}
+a{
+    text-decoration: none;
+    color: var(--blanco);
+}
+li button{
+    background-color: var(--cafe);
+    border: none;
+    width: 20rem;
+    height: 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+li button:hover{
+    background-color: var(--cafe-claro);
+    border: 2px solid var(--cafe);
+}
+.cerrar-sesion{
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.cerrar-sesion:hover{
+    background-color: var(--rojo-claro);
+    border: 2px solid var(--rojo);
+}
+span{
+    color: var(--cafe);
+    font-weight: bold;
+}
+.contenido{
+    width: 50%;
+    margin: auto;
+}
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.publicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    border: 2px solid var(--cafe);
+    gap: 1rem;
+}
+.imagen-papa{
+    border-radius: 2%;
+    overflow: hidden;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+p{
+    font-size: 1.5rem;
+}
+.botones{
+    display: flex;
+    gap: 5rem;
+    margin: 1rem 0 2rem 0;
+    align-items: center;
+}
+.botones button{
+    border: none;
+    height: 3rem;
+    width: 12rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--blanco);
+}
+.actualizar{
+    background-color: var(--verde);
+}
+.eliminar{
+    background-color: var(--rojo);
+}
+.actualizar:hover{
+    background-color: var(--verde-claro);
+    border: 2px solid var(--verde);
+}
+.eliminar:hover{
+    background-color: var(--rojo-claro);
+    border: 2px solid var(--rojo);
+}
+.casilla{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+input{
+    border: 2px solid var(--cafe);
+    border-radius: 5px;
+    margin: auto;
+    width: 8rem;
+    height: 1.7rem;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.icono{
+    width: 13rem;
+    margin: auto;
+}
