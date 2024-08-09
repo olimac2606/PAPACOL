@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COPAPA</title>
-    <link rel="stylesheet" href="styles/actualizar-cuenta.css">
-    <link rel="icon" href="images/copapa.png" type="image/png">
+    <link rel="stylesheet" href="../css/actualizar-cuenta.css">
+    <link rel="icon" href="../img/copapa.png" type="image/png">
 </head>
 <body>
-    <a href="panel-agricultor.html"><img src="images/flecha-izquierda.png" alt="Flecha para retroceder"></a>
+    <a href="panel-agricultor.html"><img src="../img/flecha-izquierda.png" alt="Flecha para retroceder"></a>
     <div class="contenido">
-        <img class="icono" src="images/copapa.png" alt="Icono COPAPA">
+        <img class="icono" src="../img/copapa.png" alt="Icono COPAPA">
         <h2>Actualizar Cuenta</h2>
         <form class="formularios" action="">
             <div class="contenedor-inputs">

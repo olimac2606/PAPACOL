@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COPAPA</title>
-    <link rel="stylesheet" href="styles/compra.css">
-    <link rel="icon" href="images/copapa.png" type="image/png">
+    <link rel="stylesheet" href="../css/compra.css">
+    <link rel="icon" href="../img/copapa.png" type="image/png">
 </head>
 <body>
     <div class="container">
-        <a href="panel-cliente.html"><img src="images/flecha-izquierda.png" alt="Icono para retroceder a la página anterior"></a>
+        <a href="panel-cliente.html"><img src="../img/flecha-izquierda.png" alt="Icono para retroceder a la página anterior"></a>
         <div class="encabezado">
-            <img class="icono" src="images/copapa.png" alt="Icono copapa">
+            <img class="icono" src="../img/copapa.png" alt="Icono copapa">
             <h2>Carrito de Compras</h2>
         </div>
         <table>
@@ -28,27 +28,27 @@
             <tbody>
                 <tr>
                     <td>Papa Pastusa</td>
-                    <td><img src="images/papa-pastusa.jpeg" alt=""></td>
+                    <td><img src="../img/papa-pastusa.jpeg" alt=""></td>
                     <td>6.000$</td>
                     <td>500kg</td>
                     <td>1.800.000$</td>
-                    <td><img class="cancelar" src="images/cancelar.png" alt="Botón de cancelar"></td>
+                    <td><img class="cancelar" src="img/cancelar.png" alt="Botón de cancelar"></td>
                 </tr>
                 <tr>
                     <td>Papa Pastusa</td>
-                    <td><img src="images/papa-pastusa.jpeg" alt=""></td>
+                    <td><img src="../img/papa-pastusa.jpeg" alt=""></td>
                     <td>6.000$</td>
                     <td>500kg</td>
                     <td>1.800.000$</td>
-                    <td><img class="cancelar" src="images/cancelar.png" alt="Botón de cancelar"></td>
+                    <td><img class="cancelar" src="img/cancelar.png" alt="Botón de cancelar"></td>
                 </tr>
                 <tr>
                     <td>Papa Pastusa</td>
-                    <td><img src="images/papa-pastusa.jpeg" alt=""></td>
+                    <td><img src="../img/papa-pastusa.jpeg" alt=""></td>
                     <td>6.000$</td>
                     <td>500kg</td>
                     <td>1.800.000$</td>
-                    <td><img class="cancelar" src="images/cancelar.png" alt="Botón de cancelar"></td>
+                    <td><img class="cancelar" src="img/cancelar.png" alt="Botón de cancelar"></td>
                 </tr>
             </tbody>
         </table>

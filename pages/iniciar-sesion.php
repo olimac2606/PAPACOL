@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COPAPA</title>
-    <link rel="stylesheet" href="styles/iniciar-sesion.css">
-    <link rel="icon" href="images/copapa.png" type="image/png">
+    <link rel="stylesheet" href="../css/iniciar-sesion.css">
+    <link rel="icon" href="../img/copapa.png" type="image/png">
 </head>
 <body>
     <div class="contenedor">
-        <img class="icono" src="images/copapa.png" alt="Icono COPAPA">
+        <img class="icono" src="../img/copapa.png" alt="Icono COPAPA">
         <h2>Inicio Sesión</h2>
         <form class="formulario-inicio formularios" action="">
             <div class="contenedor-inputs">
