@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COPAPA</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css"> <!-- Estilo para el menú de encabezado -->
+    <link rel="stylesheet" href="css/footer.css"> <!-- Estilo para el pie de página -->
+    <?php include 'pages/header.php'; ?> <!-- Incluye el menú de encabezado -->
     <link rel="icon" href="img/copapa.png" type="image/png">
+
 </head>
 <body>
+
     <div class="contenedor">
         <img class="icono" src="img/copapa.png" alt="Icono COPAPA">
         <h1>Sistema de Compra y venta de papa</h1>
@@ -22,5 +27,8 @@
             </div>
         </div>
     </div>
+    <?php include 'pages/footer.php'; ?> <!-- Incluye el pie de página -->
 </body>
 </html>
+
+

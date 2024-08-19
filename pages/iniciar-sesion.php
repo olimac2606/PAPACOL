@@ -6,6 +6,9 @@
     <title>COPAPA</title>
     <link rel="stylesheet" href="../css/iniciar-sesion.css">
     <link rel="icon" href="../img/copapa.png" type="image/png">
+    <link rel="stylesheet" href="../css/header.css"> <!-- Estilo para el menú de encabezado -->
+    <link rel="stylesheet" href="../css/footer.css"> <!-- Estilo para el pie de página -->
+    <?php include 'header.php'; ?> <!-- Incluye el menú de encabezado -->
 </head>
 <body>
     <div class="contenedor">
@@ -24,7 +27,7 @@
             <a href="#">¿Olvidaste tu contraseña?</a>
         </form>
         <h2>¿No estás registrado?</h2>
-        <form class="formularios" action="">
+        <form class="formularios"  action="procesar_registro.php" method="post">
             <div class="contenedor-inputs">
                 <label for="documento-registro">Ingrese número de documento:</label>
                 <input required id="documento-registro" name="documento-registro" type="number">
@@ -56,5 +59,6 @@
             <button type="submit">Registrarte</button>
         </form>
     </div>
+    <?php include 'footer.php'; ?> <!-- Incluye el pie de página -->
 </body>
 </html>
