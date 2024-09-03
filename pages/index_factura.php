@@ -19,9 +19,9 @@ echo "<table border='1'>
             <th>Cliente</th>
             <th>Campesino</th>
             <th>Valor Total</th>
-             <th>Iva compra</th>
-             <th>Descuentos</th>
-              <th>Tipo pago</th>
+            <th>Iva compra</th>
+            <th>Descuentos</th>
+            <th>Tipo pago</th>
             <th>Acciones</th>
         </tr>";
 
@@ -41,11 +41,11 @@ foreach ($resultado as $fila) {
             <td>" . $nomCli . "</td>
              <td>" . $monCam . "</td>
              <td>" . $fecFac . "</td>
-            <td>" . $valorTotal . "</td>
-            <td>" . $descuCompra . "</td>
-            <td>" . $ivaCompra . "</td>
-            <td>" . $tipoPago . "€</td>
-            <td>
+             <td>" . $valorTotal . "</td>
+             <td>" . $descuCompra . "</td>
+             <td>" . $ivaCompra . "</td>
+             <td>" . $tipoPago . "€</td>
+             <td>
                 <a href='../vistas/factura_update.php?id=" . $idFac . "'>Editar</a> |
                 <a href='../sesiones/factura_eliminar.php?Id_fac=" . $idFac . "' onclick=\"return confirm('¿Estás seguro?')\">Eliminar</a>
             </td>
