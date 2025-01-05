@@ -4,30 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COPAPA</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/header.css"> <!-- Estilo para el menú de encabezado -->
-    <link rel="stylesheet" href="css/footer.css"> <!-- Estilo para el pie de página -->
-    <?php include 'pages/header.php'; ?> <!-- Incluye el menú de encabezado -->
-    <link rel="icon" href="img/copapa.png" type="image/png">
-
+    <link rel="icon" href="/PAPACOL/img/copapa.png" type="image/png">
+    <link href="/PAPACOL/src/output.css" rel="stylesheet">
 </head>
-<body>
-
-    <div class="contenedor">
-        <img class="icono" src="img/copapa.png" alt="Icono COPAPA">
-        <h1>Sistema de Compra y venta de papa</h1>
-        <div class="contenedor-opciones">
-            <div class="contenedor-opcion">
-                <h2>¿Eres agricultor?</h2>
-                <a href="pages/iniciar-sesion.php"><img src="img/agricultor.png" alt="Enlace para agricultores"></a>
+<body class="flex flex-col bg-beigeCustom">
+    <?php include 'pages/header.php'; ?> <!-- Incluye el menú de encabezado -->
+    <div class="flex flex-1 flex-col items-center pb-28 mt-[5rem]">
+        <img class="w-44 mb-4" src="/PAPACOL/img/copapa.png" alt="Icono COPAPA">
+        <h1 class="text-center text-[2.6rem] text-grisCustom m-0 mb-2">Sistema de Compra y venta de papa</h1>
+        <div class="flex gap-[5rem]">
+            <div>
+                <h2 class="mb-4 text-grisCustom text-[1.8rem] text-center font">¿Eres agricultor?</h2>
+                <a href="pages/iniciar-sesion.php?tipo=agricultor"><img class="w-[20rem] border-2 border-grisCustom rounded-full" src="/PAPACOL/img/agricultor.png" alt="Enlace para agricultores"></a>
             </div>
-            <div class="contenedor-opcion">
-                <h2>¿Eres comprador?</h2>
-                <a href="pages/iniciar-sesion.php"><img src="img/comprador.png" alt="Enlace para compradores"></a>
+            <div>
+                <h2 class="mb-4 text-grisCustom text-[1.8rem] text-center font">¿Eres comprador?</h2>
+                <a href="pages/iniciar-sesion.php?tipo=comprador"><img class="w-[20rem] border-2 border-grisCustom rounded-full" src="/PAPACOL/img/comprador.png" alt="Enlace para compradores"></a>
             </div>
         </div>
     </div>
-    <?php include 'pages/footer.php'; ?> <!-- Incluye el pie de página -->
+    <?php include 'pages/footer.php';?> <!-- Incluye el pie de página -->
 </body>
 </html>
 

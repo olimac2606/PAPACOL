@@ -4,59 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COPAPA</title>
-    <link rel="stylesheet" href="../css/iniciar-sesion.css">
     <link rel="icon" href="../img/copapa.png" type="image/png">
-    <link rel="stylesheet" href="../css/header.css"> <!-- Estilo para el menú de encabezado -->
-    <link rel="stylesheet" href="../css/footer.css"> <!-- Estilo para el pie de página -->
-    <?php include 'header.php'; ?> <!-- Incluye el menú de encabezado -->
+    <link rel="stylesheet" href="/PAPACOL/src/output.css">
 </head>
-<body>
-    <div class="contenedor">
-        <img class="icono" src="../img/copapa.png" alt="Icono COPAPA">
-        <h2>Inicio Sesión</h2>
-        <form class="formulario-inicio formularios" action="">
-            <div class="contenedor-inputs">
+<body class="bg-beigeCustom">
+    <?php include 'header.php'; ?> <!-- Incluye el menú de encabezado -->
+    <div class="h-screen flex flex-col items-center justify-center pb-20">
+        <img class="w-44" src="../img/copapa.png" alt="Icono COPAPA">
+        <h2 class="text-grisCustom text-2xl">Inicio Sesión</h2>
+        <form class="w-[40rem] flex flex-col items-center" action="/PAPACOL/procesos/procesar-inicioSesion.php" method="POST">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="documento">Ingrese número de documento:</label>
-                <input required name="documento" id="documento" type="number" min="1">
+                <input required name="documento" id="documento" type="number" min="1" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md appearance-none">
             </div>
-            <div class="contenedor-inputs">
-                <label for="contraseña">Ingrese contraseña:</label>
-                <input required id="contraseña" name="contraseña" type="password">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
+                <label for="contrasena">Ingrese contraseña:</label>
+                <input required id="contrasena" name="contrasena" type="password" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <button type="submit">Iniciar Sesión</button>
+            <button class="my-[1rem] w-[12rem] h-[2.2rem] bg-cafeCustom text-white text-lg border-none rounded hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom" type="submit">Iniciar Sesión</button>
             <a href="#">¿Olvidaste tu contraseña?</a>
         </form>
-        <h2>¿No estás registrado?</h2>
-        <form class="formularios"  action="procesar_registro.php" method="post">
-            <div class="contenedor-inputs">
+        <h2 class="text-grisCustom text-2xl">¿No estás registrado?</h2>
+        <form class="w-[40rem] flex flex-col items-center"  action="/PAPACOL/procesos/procesar_registro.php" method="POST">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="documento-registro">Ingrese número de documento:</label>
-                <input required id="documento-registro" name="documento-registro" type="number">
+                <input required id="documento-registro" name="documento-registro" type="number" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md appearance-none">
             </div>
-            <div class="contenedor-inputs">
-                <label for="contraseña-registro">Ingrese contraseña:</label>
-                <input required id="contraseña-registro" name="contraseña-registro" type="password">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
+                <label for="contrasena-registro">Ingrese contraseña:</label>
+                <input required id="contrasena-registro" name="contrasena-registro" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md" type="password">
             </div>
-            <div class="contenedor-inputs">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="nombre-registro">Ingrese nombre:</label>
-                <input required id="nombre-registro" name="nombre-registro" type="text">
+                <input required id="nombre-registro" name="nombre-registro" type="text" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="contenedor-inputs">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="apellido-registro">Ingrese apellido:</label>
-                <input required id="apellido-registro" name="apellido-registro" type="text">
+                <input required id="apellido-registro" name="apellido-registro" type="text" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="contenedor-inputs">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="correo-registro">Ingrese correo electrónico:</label>
-                <input required id="correo-registro" name="correo-registro" type="email">
+                <input required id="correo-registro" name="correo-registro" type="email" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="contenedor-inputs">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="telefono-registro">Ingrese número telefónico:</label>
-                <input required name="telefono-registro" id="telefono-registro" type="tel" min="1">
+                <input required name="telefono-registro" id="telefono-registro" type="tel" min="1" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="contenedor-inputs">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="direccion-registro">Ingrese dirección:</label>
-                <input required id="direccion-registro" name="direccion-registro" type="text">
+                <input required id="direccion-registro" name="direccion-registro" type="text" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <button type="submit">Registrarte</button>
+            <div> <!-- Envia el tipo de usuario -->
+                <?php 
+                    $tipo = $_GET['tipo'];
+                ?>
+                <input type="hidden" value="<?php echo htmlspecialchars($tipo) ?>" name="tipo-usuario">
+                <input type="hidden" value="<?php echo date('Y-m-d'); ?>" name="fecha-creacion">
+            </div>
+            <button class="my-[1rem] w-[12rem] h-[2.2rem] bg-cafeCustom text-white text-[1.1rem] border-none rounded hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom" type="submit">Registrarte</button>
         </form>
     </div>
     <?php include 'footer.php'; ?> <!-- Incluye el pie de página -->
