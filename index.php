@@ -9,7 +9,8 @@
 </head>
 <body class="flex flex-col bg-beigeCustom">
     <?php include 'pages/header.php'; ?> <!-- Incluye el menú de encabezado -->
-    <div class="flex flex-1 flex-col items-center pb-28 mt-[5rem]">
+    <div id="contenedor" class="flex flex-1 flex-col items-center pb-28 mt-[5rem]">
+        <script src="js/notificaciones.js"></script>
         <img class="w-44 mb-4" src="/PAPACOL/img/copapa.png" alt="Icono COPAPA">
         <h1 class="text-center text-[2.6rem] text-grisCustom m-0 mb-2">Sistema de Compra y venta de papa</h1>
         <div class="flex gap-[5rem]">

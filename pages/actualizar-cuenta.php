@@ -15,7 +15,7 @@
         <form class="m-auto w-[45%] flex flex-col items-center" action="">
             <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
                 <label for="documento-registro">Ingrese número de documento:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md appearance-none" value="1075319149" required id="documento-registro" name="documento-registro" type="number">
+                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="1075319149" required id="documento-registro" name="documento-registro" type="number">
             </div>
             <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
                 <label for="nombre-registro">Ingrese nombre:</label>

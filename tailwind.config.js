@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,php}","./*.{php,html}", "./**/*.php"], //Busca archivos php y html en la carpeta raiz y en subdirectorios menos en src//
+  content: [
+    "./**/*.php",  // Busca archivos PHP en la carpeta raíz y en subdirectorios
+    "./**/*.js",    // Busca archivos JS en la carpeta raíz y en subdirectorios
+    "!./node_modules/**"  // Excluir node_modules
+  ],
   theme: {
     extend: {
       colors: {

@@ -8,7 +8,7 @@
     <link href="/PAPACOL/src/output.css" rel="stylesheet">
 </head>
 <body class="bg-beigeCustom">
-    <a class="mt-[1rem] mr-[2rem] float-right w-[5rem] overflow-hidden" href="panel-agricultor.html"><img class="max-w-full h-auto block" src="../img/flecha-izquierda.png" alt="Flecha para retroceder"></a>
+    <a class="mt-[1rem] mr-[2rem] float-right w-[5rem] overflow-hidden" href="panel-agricultor.php"><img class="max-w-full h-auto block" src="../img/flecha-izquierda.png" alt="Flecha para retroceder"></a>
     <div class="flex flex-col items-center">
         <img class="w-[13rem]" src="../img/copapa.png" alt="Icono COPAPA">
         <h2 class="text-[3rem] text-center">Nueva Publicación</h2>

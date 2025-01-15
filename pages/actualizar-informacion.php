@@ -19,7 +19,7 @@
             </div>
             <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
                 <label for="precio">Ingrese Precio por Kilogramo Aquí:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md appearance-none" value="6000" required id="precio" name="precio" type="number" min="1">
+                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="6000" required id="precio" name="precio" type="number" min="1">
             </div>
             <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
                 <label for="ubicacion">Ingrese Ubicación de Cultivo Aquí:</label>
@@ -27,7 +27,7 @@
             </div>
             <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
                 <label for="cantidad">Ingrese Cantidad Disponible en Kilogramos Aquí:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md appearance-none" value="80000" required name="cantidad" id="cantidad" type="number" min="1">
+                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="80000" required name="cantidad" id="cantidad" type="number" min="1">
             </div>
             <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
                 <label for="responsable">Ingrese Responsable del Cultivo Aquí:</label>
