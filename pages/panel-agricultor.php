@@ -1,9 +1,9 @@
 <?php
     session_start();
     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-        echo "esta logeado";
+        
     }else{
-        header("Location: /PAPACOL/index.php");
+        header("Location: /PAPACOL/pages/iniciar-sesion.php?tipo=agricultor");
         exit();
     }
 ?>
@@ -18,7 +18,7 @@
     <link href="/PAPACOL/src/output.css" rel="stylesheet">
 </head>
 <body class="bg-beigeCustom">
-    <nav class="mb-5">
+    <nav class="mb-5 mt-2 mr-2">
         <ul class="list-none flex gap-[3rem] justify-end">
             <li>
                 <a href="nueva-publicacion.php" class="bg-cafeCustom border-none w-[20rem] h-[3rem] rounded cursor-pointer text-[1.3rem] text-white no-underline flex items-center justify-center hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom">
@@ -39,6 +39,10 @@
             </li>
         </ul>
     </nav>
+    <div class="m-auto" id="contenedor">
+        <!-- Script para mostrar notificación de usuario creado exitosamente o intento fallido -->
+        <script src="/PAPACOL/js/notificaciones.js"></script>
+    </div>
     <div class="w-[50%] m-auto">
         <img class="w-[13rem] m-auto" src="../img/copapa.png" alt="Icono COPAPA">
         <h2 class="mb-4 text-[2rem] text-center">Panel de control públicaciones</h2>

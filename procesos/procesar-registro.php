@@ -31,36 +31,43 @@
         $stmtDocumento->bindParam(":documento", $documento, PDO::PARAM_INT);
         $stmtDocumento->execute();
         $resultadoDocumento = $stmtDocumento->fetchAll(PDO::FETCH_ASSOC);
+
         //valida si el numero de documento ya fue creado anteriormente
         if(!array_column($resultadoDocumento, "numeroDocumento") == $documento){
-            //Consulta preparada para evitar inyecciones sql (trabaja con PDO)
-            //Consulta sql
-            $sql = "INSERT INTO usuarios (numeroDocumento, contrasena, nombre, apellido, correoElectronico, numeroTelefono, departamento, municipio, direccion, tipo, fechaCreacion) VALUES (:numeroDocumento, :contrasena, :nombre, :apellido, :correoElectronico, :numeroTelefono, :departamento, :municipio, :direccion, :tipo, :fechaCreacion)";
-            //Prepara la consulta
-            $stmt = $pdo->prepare($sql);
-            //Enlaza los valores
-            $stmt->execute([
-                ":numeroDocumento" => $documento,
-                ":contrasena" => $contrasena,
-                ":nombre" => $nombre,
-                ":apellido" => $apellido,
-                ":correoElectronico" => $correo,
-                ":numeroTelefono" => $telefono,
-                "departamento" => $departamento,
-                "municipio" => $municipio,
-                ":direccion" => $direccion,
-                ":tipo" => $tipoUsuario,
-                ":fechaCreacion" => $fechaCreacion,
-            ]);
-            header("location: /PAPACOL/pages/iniciar-sesion.php?tipo=$tipoUsuario&color=bg-verdeClaroCustom&mensaje=Registro de usuario exitoso, ya puede iniciar sesión.");
+            //Valida si el tipo de usuario no es una cadena vacia
+            if(!empty($tipoUsuario)){
+                //Consulta preparada para evitar inyecciones sql (trabaja con PDO)
+                //Consulta sql
+                $sql = "INSERT INTO usuarios (numeroDocumento, contrasena, nombre, apellido, correoElectronico, numeroTelefono, departamento, municipio, direccion, tipo, fechaCreacion) VALUES (:numeroDocumento, :contrasena, :nombre, :apellido, :correoElectronico, :numeroTelefono, :departamento, :municipio, :direccion, :tipo, :fechaCreacion)";
+                //Prepara la consulta
+                $stmt = $pdo->prepare($sql);
+                //Enlaza los valores
+                $stmt->execute([
+                    ":numeroDocumento" => $documento,
+                    ":contrasena" => $contrasena,
+                    ":nombre" => $nombre,
+                    ":apellido" => $apellido,
+                    ":correoElectronico" => $correo,
+                    ":numeroTelefono" => $telefono,
+                    "departamento" => $departamento,
+                    "municipio" => $municipio,
+                    ":direccion" => $direccion,
+                    ":tipo" => $tipoUsuario,
+                    ":fechaCreacion" => $fechaCreacion,
+                ]);
+                header("Location: /PAPACOL/pages/iniciar-sesion.php?tipo=$tipoUsuario&color=bg-verdeClaroCustom&mensaje=Registro de usuario exitoso, ya puede iniciar sesión.");
+                exit();
+            }else{
+                header("Location: /PAPACOL/index.php?&color=bg-rojoClaroCustom&mensaje=Hubo un error al momento de registrar el usuario, por favor intente de nuevo.");
             exit();
+            }
         }else{
-            header("location: /PAPACOL/pages/iniciar-sesion.php?tipo=$tipoUsuario&color=bg-rojoClaroCustom&mensaje=El número de documento ingresado ya está registrado, por favor, volver a intentar.");
+            header("Location: /PAPACOL/pages/iniciar-sesion.php?tipo=$tipoUsuario&color=bg-rojoClaroCustom&mensaje=El número de documento ingresado ya está registrado, por favor, volver a intentar.");
             exit();
         }
     } catch (PDOException $e) {
         error_log("Error al insertar usuario: " . $e->getMessage());
-        header("location: /PAPACOL/pages/iniciar-sesion.php?tipo=$tipoUsuario&color=bg-rojoClaroCustom&mensaje=Error al crear usuario, por favor intente de nuevo o mas tarde.");
+        header("Location: /PAPACOL/pages/iniciar-sesion.php?tipo=$tipoUsuario&color=bg-rojoClaroCustom&mensaje=Error al crear usuario, por favor intente de nuevo o mas tarde.");
         exit();
     }
     
