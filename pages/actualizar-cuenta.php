@@ -1,3 +1,18 @@
+<?php
+include $_SERVER["DOCUMENT_ROOT"] . "/PAPACOL/config/db.php";
+session_start();
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    //Consulta preparada
+    $sql = "SELECT * FROM usuarios WHERE usuarioId = :usuarioId";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":usuarioId", $_SESSION["userId"], PDO::PARAM_INT);
+    $stmt->execute();
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+}else{
+    header("Location: /PAPACOL/index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,35 +25,47 @@
 <body class="bg-beigeCustom">
     <a class="mr-[2rem] mt-[0.5rem] float-right w-[5rem] overflow-hidden" href="panel-agricultor.html"><img class="max-w-full h-auto block" src="../img/flecha-izquierda.png" alt="Flecha para retroceder"></a>
     <div class="flex flex-col items-center">
+        <!-- Script para mostrar notificación de usuario creado exitosamente o intento fallido -->
+        <script src="/PAPACOL/js/notificaciones.js"></script>
         <img class="max-w-full h-auto block w-[13rem]" src="../img/copapa.png" alt="Icono COPAPA">
         <h2 class="text-5xl text-center mb-8">Actualizar Cuenta</h2>
-        <form class="m-auto w-[45%] flex flex-col items-center" action="">
-            <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
-                <label for="documento-registro">Ingrese número de documento:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="1075319149" required id="documento-registro" name="documento-registro" type="number">
-            </div>
-            <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
+        <form class="w-[40rem] flex flex-col items-center"  action="/PAPACOL/procesos/procesar-actualizacion-cuenta.php" method="POST">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="nombre-registro">Ingrese nombre:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="Fred Camilo" required id="nombre-registro" name="nombre-registro" type="text">
+                <input value="<?php echo $resultado["nombre"] ?>" required id="nombre-registro" name="nombre-registro" type="text" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="apellido-registro">Ingrese apellido:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="Polania Montero" required id="apellido-registro" name="apellido-registro" type="text">
+                <input value="<?php echo $resultado["apellido"] ?>" required id="apellido-registro" name="apellido-registro" type="text" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="correo-registro">Ingrese correo electrónico:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="fredcamilo9926@outlook.com" required id="correo-registro" name="correo-registro" type="email">
+                <input value="<?php echo $resultado["correoElectronico"] ?>" required id="correo-registro" name="correo-registro" type="email" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="telefono-registro">Ingrese número telefónico:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="3234171295" required name="telefono-registro" id="telefono-registro" type="tel" min="1">
+                <input value="<?php echo $resultado["numeroTelefono"] ?>" required name="telefono-registro" id="telefono-registro" type="tel" min="1" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <div class="flex justify-between items-center w-full py-[0.4rem] px-[2rem]">
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
+                <label for="departamento">Departamento:</label>
+                <select class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md" name="departamento" id="departamento">
+                    <option class="opcion-actualizar-departamento" value="<?php echo $resultado["departamento"] ?>"><?php echo $resultado["departamento"] ?></option>
+                </select>
+            </div>
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
+                <label for="municipio">Municipio:</label>
+                <select class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md" name="municipio" id="municipio">
+                    <option class="opcion-actualizar-municipio" value="<?php echo $resultado["municipio"] ?>"><?php echo $resultado["municipio"] ?></option>
+                </select>
+            </div>
+            <div class="flex justify-between items-center w-full px-[2rem] py-[0.4rem]">
                 <label for="direccion-registro">Ingrese dirección:</label>
-                <input class="w-1/2 h-[1.7rem] border-2 border-cafeCustom rounded-md" value="calle 40#7w-52" required id="direccion-registro" name="direccion-registro" type="text">
+                <input value="<?php echo $resultado["direccion"] ?>" required id="direccion-registro" name="direccion-registro" type="text" class="w-1/2 h-[1.7rem] border-[2px] border-cafeCustom rounded-md">
             </div>
-            <button class="mt-6 my-[1rem] w-[12rem] h-[2.2rem] bg-cafeCustom text-white text-[1.1rem] border-none rounded hover:cursor-pointer hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom" type="submit">Guardar Información</button>
+            <button class="my-[1rem] w-[12rem] h-[2.2rem] bg-cafeCustom text-white text-[1.1rem] border-none rounded hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom" type="submit">Actualizar cuenta</button>
         </form>
     </div>
+    <!-- Script para mostrar los departamentos y municipios de Colombia -->
+    <script src="/PAPACOL/js/municipios-departamentos.js"></script>
 </body>
 </html>

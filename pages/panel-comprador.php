@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['logged_in']) && $_SESSION['logged_in'] !== true && $_SESSION["tipo"] !== "comprador") {
+    header("Location: /PAPACOL/pages/iniciar-sesion.php?tipo=comprador");
+    exit();   
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +13,25 @@
     <title>COPAPA</title>
     <link href="/PAPACOL/src/output.css" rel="stylesheet">
     <link rel="icon" href="../img/copapa.png" type="image/png">
-    <script>
-        function cerrarSesion(){
-            window.location.href = "index.html";
-        }
-    </script>
 </head>
 <body class="bg-beigeCustom">
-    <nav>
-        <ul class="mr-[2rem] list-none flex gap-[3rem] justify-end">
-            <li><button class="bg-cafeCustom border-none w-[20rem] h-[3rem] rounded cursor-pointer text-[1.3rem] hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom"><a class="no-underline text-white" href="actualizar-cuenta.html">Actualizar Cuenta</a></button></li>
-            <li><button class="bg-rojoCustom border-none w-[20rem] h-[3rem] rounded cursor-pointer text-[1.3rem] hover:bg-rojoClaroCustom hover:border-2 hover:border-rojoCustom text-white" onclick="cerrarSesion()">Cerrar Sesión</button></li>
-            <li><a class="no-underline text-white" href="compra.html"><img class="max-w-full h-auto block" src="../img/carrito-de-compras.png" alt="Icono de carrito de compras"></a></li>
+    <nav class="mb-5 mt-2 mr-2">
+        <ul class="list-none flex gap-[3rem] justify-end">
+            <li>
+                <a class="no-underline text-white" href="compra.html"><img class="max-w-full h-auto block" src="../img/carrito-de-compras.png" alt="Icono de carrito de compras"></a>
+            </li>
+            <li>
+                <a href="actualizar-cuenta.php" class="bg-cafeCustom border-none w-[20rem] h-[3rem] rounded cursor-pointer text-[1.3rem] text-white no-underline flex items-center justify-center hover:bg-cafeClaroCustom hover:border-2 hover:border-cafeCustom">
+                    Actualizar Cuenta
+                </a>
+            </li>
+            <li>
+                <form action="/PAPACOL/procesos/cerrar-sesion.php" method="post">
+                    <button type="submit" class="bg-rojoCustom border-none w-[20rem] h-[3rem] rounded cursor-pointer text-[1.3rem] text-white hover:bg-rojoClaroCustom hover:border-2 hover:border-rojoCustom">
+                        Cerrar Sesión
+                    </button>
+                </form>
+            </li>
         </ul>
     </nav>
     <div class="w-[50%] m-auto">
